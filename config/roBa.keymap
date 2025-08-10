@@ -73,16 +73,6 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
-
-        scroll_up_down: behavior_sensor_rotate_mouse_wheel_up_down {
-            compatible = "zmk,behavior-sensor-rotate";
-            #sensor-binding-cells = <0>;
-            bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
-
-            // 追加: スクロールのタップ時間を設定 (20ms)
-
-            tap-ms = <20>;
-        };
     };
 
     keymap {
@@ -96,7 +86,7 @@
 &kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT    &mt LEFT_SHIFT ESCAPE  &lt 2 SPACE  &lt 1 TAB          &mt RS(RIGHT_WIN) BACKSPACE  &lt 3 ENTER                                             &kp ESCAPE
             >;
 
-            sensor-bindings = <&scroll_up_down>;
+           sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
         };
 
         SYMBOL {
